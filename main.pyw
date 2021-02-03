@@ -3,7 +3,7 @@ import random
 import sys
 
 root = Tk()
-root.geometry("650x600")
+root.geometry("680x600")
 root.title("Rock Paper Scissors")
 
 choice_list = ["Rock", "Paper", "Scissors"]
@@ -85,50 +85,48 @@ def take(ans): # Function either plays a new game or quits the app according to 
         sys.exit()
 
 # playingFrame shows the current game's information
-playingFrame = Frame(root, bg = 'lightblue', height = 500, width = 350)
-playingFrame.grid(row = 0, column = 1)
-playingFrame.pack_propagate(0)
+playingFrame = Frame(root, bg = 'lightblue')
+playingFrame.grid(row = 0, column = 1, pady = 10)
 
 # This frame holds the options to play a new game or quit
 newFrame = Frame(root, bg = 'cyan')
-newFrame.grid(row = 1, column = 1)
+newFrame.grid(row = 1, column = 0, columnspan = 2, pady = 5)
 
-label_player = Label(playingFrame, text = f'Player : {player}',font = 'comicsansms 20 bold', padx = 30, pady = 5)
+label_player = Label(playingFrame, text = f'Player : {player}', font = ('Comic Sans MS', 20, 'bold'), padx = 30, pady = 5)
 label_player.pack(pady = 15)
-label_comp = Label(playingFrame, text = f'Computer : {comp}',font = 'comicsansms 20 bold', padx = 30, pady = 5)
+label_comp = Label(playingFrame, text = f'Computer : {comp}',font = ('Comic Sans MS', 20, 'bold'), padx = 30, pady = 5)
 label_comp.pack(pady = 15)
 
-label_res = Label(playingFrame, text = "Let's Begin!",font = 'comicsansms 20 bold', padx = 30, pady = 5)
+label_res = Label(playingFrame, text = "Let's Begin!",font = ('Comic Sans MS', 20, 'bold'), padx = 30, pady = 5)
 label_res.pack(pady = 15)
 
-label_pscore = Label(playingFrame, text = f'Your score: {p_score}',font = 'comicsansms 20 bold', padx = 30, pady = 5)
+label_pscore = Label(playingFrame, text = f'Your score: {p_score}',font = ('Comic Sans MS', 20, 'bold'), padx = 30, pady = 5)
 label_pscore.pack(pady = 15)
-label_cscore = Label(playingFrame, text = f"Computer's score: {c_score}",font = 'comicsansms 20 bold', padx = 30, pady = 5)
+label_cscore = Label(playingFrame, text = f"Computer's score: {c_score}",font = ('Comic Sans MS', 20, 'bold'), padx = 30, pady = 5)
 label_cscore.pack(pady = 15)
 
-label_res2 = Label(playingFrame, text = "",font = 'comicsansms 20 bold', padx = 30)
-label_res2.pack(pady = 15)
+label_res2 = Label(playingFrame, text = "",font = ('Comic Sans MS', 20, 'bold'), bg = 'lightblue', padx = 30)
+label_res2.pack()
 
 play_again_btn = Button(newFrame, text = 'Play Again', state = DISABLED, command = lambda: take('y'), padx = 20, pady = 10)
-play_again_btn.grid(row = 0, column = 0, padx = 35, pady = 15)
+play_again_btn.grid(row = 0, column = 0, padx = 100, pady = 15)
 
 quit_btn = Button(newFrame, text = 'Quit', state = DISABLED, command = lambda: take('n'), padx = 35, pady = 10)
-quit_btn.grid(row = 0, column = 1, padx = 35, pady = 15)
+quit_btn.grid(row = 0, column = 1, padx = 100, pady = 15)
 
 # This frame holds the buttons from which user chooses 'Rock', 'Paper' or 'Scissors'
-optionsFrame = Frame(root, bg = 'green', height = 600, width = 300)
-optionsFrame.grid(row = 0, column = 0, rowspan = 2)
-optionsFrame.pack_propagate(0)
+optionsFrame = Frame(root, bg = 'green')
+optionsFrame.grid(row = 0, column = 0, padx = 10)
 
 l = Label(optionsFrame, text = "Choose here",font = 'bold', padx = 105, relief = RAISED)
 l.pack(side = TOP)
 
 # Buttons for playing
-choice1button = Button(optionsFrame, text = 'ROCK',font = 'comicsansms 20 bold', padx = 32, pady = 10, command = lambda: choose("Rock"))
+choice1button = Button(optionsFrame, text = 'ROCK',font = ('Comic Sans MS', 20, 'bold'), padx = 32, pady = 10, command = lambda: choose("Rock"))
 choice1button.pack(pady = 25)
-choice2button = Button(optionsFrame, text = 'PAPER',font = 'comicsansms 20 bold', padx = 25, pady = 10, command = lambda: choose("Paper"))
+choice2button = Button(optionsFrame, text = 'PAPER',font = ('Comic Sans MS', 20, 'bold'), padx = 25, pady = 10, command = lambda: choose("Paper"))
 choice2button.pack(pady = 25)
-choice3button = Button(optionsFrame, text = 'SCISSORS',font = 'comicsansms 20 bold', pady = 10, command = lambda: choose("Scissors"))
+choice3button = Button(optionsFrame, text = 'SCISSORS',font = ('Comic Sans MS', 20, 'bold'), pady = 10, command = lambda: choose("Scissors"))
 choice3button.pack(pady = 25)
 
 root.mainloop()

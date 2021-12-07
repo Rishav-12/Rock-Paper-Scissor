@@ -1,6 +1,7 @@
 # Rock-Paper-Scissor
 The classic 'Rock Paper Scissors' game
 
+Icon attribution: Freepik from [Flaticon](https://www.flaticon.com/)
 ### Requirements
 * Python
 * Tkinter

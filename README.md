@@ -1,10 +1,12 @@
 # Rock-Paper-Scissor
 The classic 'Rock Paper Scissors' game
 
+![Icon](https://raw.githubusercontent.com/Rishav-12/Rock-Paper-Scissor/main/rock-paper-scissors.png)
+
 Icon attribution: Freepik from [Flaticon](https://www.flaticon.com/)
 ### Requirements
 * Python
-* Tkinter
+* PySimpleGUI
 
 ### How to use
 * Make your choice by pressing the appropriate button in the left hand column. Computer makes a random choice.
